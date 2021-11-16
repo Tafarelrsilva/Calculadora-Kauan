@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Média de notas</title>
+      <link rel="stylesheet" href="reset.css" />
+      <link rel="stylesheet" href="style.css" />
+   </head>
+   <body>
+      <script>
+         function verificar() {
+            var nota1 = document.getElementById('caixa1').value;
+            nota1 = parseInt(nota1);
+
+            var nota2 = document.getElementById('caixa2').value;
+            nota2 = parseInt(nota2);
+
+            var nota3 = document.getElementById('caixa3').value;
+            nota3 = parseInt(nota3);
+
+            var total = (nota1 + nota2 + nota3) / 3;
+
+            if (total < 60) {
+               var aviso = ', você está abaixo da média!';
+            }
+
+            if (total > 60) {
+               var aviso = ', você está acima da média!';
+            }
+
+            if (total == 60) {
+               var aviso = ', você está na média ';
+            }
+            alert('Sua média é ' + total + aviso);
+         }
+      </script>
+
+      <h1 class="titulo">Calculadora de média de notas</h1>
+      <label class="caixa">
+         <h2 class="texto-nota">Digite a 1° nota</h2>
+         <input type="number" id="caixa1" class="caixa-numero" />
+         <h2 class="texto-nota">Digite a 2° nota</h2>
+         <input type="number" id="caixa2" class="caixa-numero" />
+         <h2 class="texto-nota">Digite a 3° nota</h2>
+         <input type="number" id="caixa3" class="caixa-numero" />
+      </label>
+
+      <div class="button-container">
+         <button type="button" id="button" class="button" value="Verificar" onclick="verificar()">
+            <h2 class="texto-nota">Verificar</h2>
+         </button>
+      </div>
+   </body>
+</html>
